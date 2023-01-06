@@ -1,0 +1,17 @@
+<div>
+  <label for="">Add new</label>
+  <input type="text" #newItem />
+</div>
+<button class="btn btn-primary" (click)="addItem(newItem.value)">Add!</button>
+<div id="items"></div>
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <div>
+      <li class="list-group-item" *ngFor="let item of todos">
+        <input type="checkbox" /> {{ item.id }} {{ item.name }}
+        <button>x</button>
+      </li>
+    </div>
+  </ul>
+</div>

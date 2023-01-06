@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "colonize Mars",
+      "status": false
+    },
+    {
+      "id": 2,
+      "name": "spam posts on Twitter",
+      "status": false
+    },
+    {
+      "id": 3,
+      "name": "buy Facebook",
+      "status": false
+    }
+  ]
+}

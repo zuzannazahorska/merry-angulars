@@ -2,15 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { OpenComponent } from './open/open.component';
+import { DoneComponent } from './done/done.component';
+import { AppRoutingModule } from './app-routing.module';
+import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'open', component: OpenComponent },
+  { path: 'done', component: DoneComponent },
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, OpenComponent, DoneComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DataService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
