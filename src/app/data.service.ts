@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   constructor() {}
-  private todos: object[] = [
+
+  private todos: Array<any> = [
     {
       id: 1,
       name: 'colonize Mars',
@@ -28,5 +29,9 @@ export class DataService {
 
   addItem(itemObj: object) {
     this.todos.push(itemObj);
+  }
+
+  removeItem(id: number) {
+    
   }
 }

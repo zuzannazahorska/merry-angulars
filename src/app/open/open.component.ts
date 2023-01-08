@@ -23,4 +23,10 @@ export class OpenComponent {
     };
     this.dataService.addItem(todoObj);
   }
+
+  removeItem(event: any) {
+    console.log(event.target.parentElement.getAttribute('id'));
+    const id = event.target.parentElement.getAttribute('id');
+    this.dataService.removeItem(id);
+  }
 }

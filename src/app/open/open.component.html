@@ -7,10 +7,12 @@
 
 <div class="card">
   <ul class="list-group list-group-flush">
-    <div>
-      <li class="list-group-item" *ngFor="let item of todos">
-        <input type="checkbox" /> {{ item.id }} {{ item.name }}
-        <button>x</button>
+    <div id="list">
+      <li class="list-group-item" *ngFor="let item of todos" id="${item.id}">
+        <span id="{{ item.id }}"
+          ><input id="12" type="checkbox" /> {{ item.id }} {{ item.name }}
+          <button id="dupa" (click)="removeItem($event)">x</button>
+        </span>
       </li>
     </div>
   </ul>
