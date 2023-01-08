@@ -1,6 +1,6 @@
 <div>
   <label for="">Add new</label>
-  <input type="text" #newItem />
+  <input type="text" [(ngModel)]="newItemInput" #newItem />
 </div>
 <button class="btn btn-primary" (click)="addItem(newItem.value)">Add!</button>
 <div id="items"></div>
@@ -9,8 +9,10 @@
   <ul class="list-group list-group-flush">
     <div id="list">
       <li class="list-group-item" *ngFor="let item of todos" id="${item.id}">
-        <span id="{{ item.id }}"
-          ><input id="12" type="checkbox" /> {{ item.id }} {{ item.name }}
+        <span id="{{ item.id }}"><input id="{{item.id}}" type="checkbox" (change)="updateItem(item.id)" /> {{
+          item.id }}
+          {{
+          item.name }}
           <button id="dupa" (click)="removeItem($event)">x</button>
         </span>
       </li>

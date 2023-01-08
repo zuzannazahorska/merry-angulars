@@ -31,7 +31,9 @@ export class DataService {
     this.todos.push(itemObj);
   }
 
-  removeItem(id: number) {
-    
+  removeItem(dupka: number) {
+    const index = this.todos.findIndex((item) => item.id === dupka) + 1;
+    console.log('The index is: ', index);
+    this.todos.splice(index - 1, 1);
   }
 }

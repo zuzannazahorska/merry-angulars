@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'open', component: OpenComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    FormsModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent],
