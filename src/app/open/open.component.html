@@ -9,7 +9,8 @@
   <ul class="list-group list-group-flush">
     <div id="list">
       <li class="list-group-item" *ngFor="let item of todos" id="${item.id}">
-        <span id="{{ item.id }}"><input id="{{item.id}}" type="checkbox" (change)="updateItem(item.id)" /> {{
+        <span [ngClass]="{'crossed-out': item.status}" id="{{ item.id }}"><input id="{{item.id}}" type="checkbox"
+            (change)="updateItem(item.id)" /> {{
           item.id }}
           {{
           item.name }}

@@ -4,9 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class DataService {
+  doneItems: any[] = [];
   constructor() {}
 
-  private todos: Array<any> = [
+  todos: Array<any> = [
     {
       id: 1,
       name: 'colonize Mars',
@@ -35,5 +36,20 @@ export class DataService {
     const index = this.todos.findIndex((item) => item.id === dupka) + 1;
     console.log('The index is: ', index);
     this.todos.splice(index - 1, 1);
+  }
+
+  updateItem(id: number) {
+    const item = this.todos.find((x) => x.id === id);
+    if (item) {
+      console.log('The variable item equals: ', item);
+      item.status = true;
+      // this.todos = this.todos.filter((x) => x.id !== id);
+      console.log('todos: ', this.todos);
+
+      if (item.status === true) {
+        this.doneItems.push(item);
+        this.todos.splice(item.id - 1, 1);
+      }
+    }
   }
 }

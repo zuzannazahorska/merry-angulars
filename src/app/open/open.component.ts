@@ -36,18 +36,6 @@ export class OpenComponent {
   }
 
   updateItem(id: number) {
-    const index = this.todos.findIndex((item) => item.id === id) + 1;
-    console.log('Index is ', index);
-    let item = this.todos.find((item) => item.id == index);
-    console.log(item);
-    item = {
-      id: item.id,
-      name: item.name,
-      status: true,
-    };
-    const updatedItem: any = this.todos.map((item) => {
-      return item.id === updatedItem.id ? updatedItem : item;
-    });
-    console.log(updatedItem);
+    this.dataService.updateItem(id);
   }
 }
