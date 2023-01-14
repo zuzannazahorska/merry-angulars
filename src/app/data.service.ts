@@ -40,6 +40,7 @@ export class DataService {
 
   updateItem(id: number) {
     const item = this.todos.find((x) => x.id === id);
+    console.log('Item.id equals: ', item.id);
     if (item) {
       console.log('The variable item equals: ', item);
       item.status = true;
@@ -48,7 +49,7 @@ export class DataService {
 
       if (item.status === true) {
         this.doneItems.push(item);
-        this.todos.splice(item.id - 1, 1);
+        this.todos.splice(this.todos.indexOf(item), 1);
       }
     }
   }
